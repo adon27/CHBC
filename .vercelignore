@@ -1,0 +1,8 @@
+# Local-testing-only helper -- irrelevant on Vercel (HTTPS static hosting
+# needs no local dev server), and not something that should be fetchable
+# as a public asset even though it's harmless.
+serve.ps1
+
+# Reference copy of the master template, kept in the repo for the
+# regression tests and documentation -- not meant to be a served page.
+original-template/

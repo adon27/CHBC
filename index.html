@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Office of Examinations — Back Office</title>
+<link rel="stylesheet" href="./assets/styles.css" />
+</head>
+<body>
+
+<div id="app-root">
+
+  <!-- ============ AUTH VIEW ============ -->
+  <div id="view-auth" class="view">
+    <div class="auth-card">
+      <p class="auth-eyebrow">CHRIST (Deemed to be University) · Lavasa Campus</p>
+      <h1>Office of Examinations<br /><span class="auth-sub">Back Office</span></h1>
+
+      <div id="auth-setup" class="hidden">
+        <p class="auth-note">No administrator account exists yet. Create the first one to continue.</p>
+        <form id="form-setup">
+          <label>Username
+            <input type="text" id="setup-username" autocomplete="username" required />
+          </label>
+          <label>Password
+            <input type="password" id="setup-password" autocomplete="new-password" required minlength="8" />
+          </label>
+          <label>Confirm password
+            <input type="password" id="setup-password2" autocomplete="new-password" required minlength="8" />
+          </label>
+          <button type="submit" class="btn btn-primary btn-block">Create admin account</button>
+        </form>
+      </div>
+
+      <div id="auth-login" class="hidden">
+        <form id="form-login">
+          <label>Username
+            <input type="text" id="login-username" autocomplete="username" required />
+          </label>
+          <label>Password
+            <input type="password" id="login-password" autocomplete="current-password" required />
+          </label>
+          <button type="submit" class="btn btn-primary btn-block">Log in</button>
+        </form>
+      </div>
+
+      <p id="auth-error" class="error-text hidden"></p>
+      <p id="auth-backend" class="auth-backend"></p>
+    </div>
+  </div>
+
+  <!-- ============ APP SHELL ============ -->
+  <div id="view-app" class="view hidden">
+    <header id="topbar">
+      <div class="brand">Office of Examinations <span class="brand-sub">Back Office</span></div>
+      <div class="topbar-right">
+        <span id="db-backend-badge" class="badge badge-muted"></span>
+        <span id="current-user"></span>
+        <button id="btn-logout" class="btn btn-ghost">Log out</button>
+      </div>
+    </header>
+    <div id="app-body">
+      <nav id="sidebar">
+        <button class="nav-btn" data-view="dashboard">Dashboard</button>
+        <button class="nav-btn" data-view="events">Event Manager</button>
+        <button class="nav-btn" data-view="preview">Preview &amp; Generate</button>
+        <button class="nav-btn" data-view="audit">Audit Log</button>
+        <button class="nav-btn" data-view="settings">Admin &amp; Settings</button>
+        <button class="nav-btn" data-view="tests">Test Suite</button>
+      </nav>
+      <main id="content"></main>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============ MODAL ============ -->
+<div id="modal-overlay" class="hidden">
+  <div id="modal-box" class="modal"></div>
+</div>
+
+<!-- ============ TOASTS ============ -->
+<div id="toast-container"></div>
+
+<script src="./assets/master-template.js"></script>
+<script src="./assets/crypto-utils.js"></script>
+<script src="./assets/dateFormat.js"></script>
+<script src="./assets/validation.js"></script>
+<script src="./assets/categoryInference.js"></script>
+<script src="./assets/textFormatting.js"></script>
+<script src="./assets/bulkImport.js"></script>
+<script src="./assets/db.js"></script>
+<script src="./assets/audit.js"></script>
+<script src="./assets/auth.js"></script>
+<script src="./assets/data.js"></script>
+<script src="./assets/templateEngine.js"></script>
+<script src="./assets/ui.js"></script>
+<script src="./assets/tests.js"></script>
+<script src="./assets/app.js"></script>
+</body>
+</html>
